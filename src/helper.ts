@@ -48,3 +48,9 @@ export const unit = {
     month: 'month',
     year: 'year'
 };
+
+export function getDaysInMonth(selectedMonth: number, selectedYear: number) {
+    const monthStart = new Date(selectedYear, selectedMonth, 1).valueOf();
+    const monthEnd = new Date(selectedYear, selectedMonth + 1, 1).valueOf();
+    return Math.round((monthEnd - monthStart) / (1000 * 60 * 60 * 24));
+}
